@@ -1,9 +1,10 @@
 //? Input & Resume 
 import React, { useState } from 'react';
 import { RiGithubFill, RiLinkedinBoxFill, RiMailLine, RiPhoneLine, RiMapPinLine } from 'react-icons/ri';
+import Form from './Form'
 
 const Resume = () => {
-    const [resumeData, setResumeData] = useState({
+    const [formData, setFormData] = useState({
         name: '',
         jobTitle: '',
         email: '',
@@ -15,8 +16,8 @@ const Resume = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setResumeData({
-            ...resumeData,
+        setFormData({
+            ...formData,
             [name]: value,
         });
     };
@@ -31,65 +32,11 @@ const Resume = () => {
             <div className="w-full md:w-2/5 bg-zinc-800 p-8">
                 {/* <h2 className="text-2xl font-bold mb-6">Create Your Resume</h2> */}
                 <h3 className="text-2xl font-bold mb-6 underline underline-offset-4">Header Section</h3>
-                <form className="space-y-4" onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="name" className="block text-sm font-semibold">Name</label>
-                        <input type="text" id="name" name="name"
-                            className="w-full p-2 mt-1 rounded bg-zinc-700 border border-zinc-600 focus:outline-none focus:border-blue-500"
-                            value={resumeData.name}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="jobTitle" className="block text-sm font-semibold">Job Title</label>
-                        <input type="text" id="jobTitle" name="jobTitle"
-                            className="w-full p-2 mt-1 rounded bg-zinc-700 border border-zinc-600 focus:outline-none focus:border-blue-500"
-                            value={resumeData.jobTitle}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="block text-sm font-semibold">Email</label>
-                        <input type="email" id="email" name="email"
-                            className="w-full p-2 mt-1 rounded bg-zinc-700 border border-zinc-600 focus:outline-none focus:border-blue-500"
-                            value={resumeData.email}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="phone" className="block text-sm font-semibold">Phone</label>
-                        <input type="tel" id="phone" name="phone"
-                            className="w-full p-2 mt-1 rounded bg-zinc-700 border border-zinc-600 focus:outline-none focus:border-blue-500"
-                            value={resumeData.phone}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="location" className="block text-sm font-semibold">Location</label>
-                        <input type="text" id="location" name="location"
-                            className="w-full p-2 mt-1 rounded bg-zinc-700 border border-zinc-600 focus:outline-none focus:border-blue-500"
-                            value={resumeData.location}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="github" className="block text-sm font-semibold">GitHub</label>
-                        <input type="url" id="github" name="github"
-                            className="w-full p-2 mt-1 rounded bg-zinc-700 border border-zinc-600 focus:outline-none focus:border-blue-500"
-                            value={resumeData.github}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="linkedin" className="block text-sm font-semibold">LinkedIn</label>
-                        <input type="url" id="linkedin" name="linkedin"
-                            className="w-full p-2 mt-1 rounded bg-zinc-700 border border-zinc-600 focus:outline-none focus:border-blue-500"
-                            value={resumeData.linkedin}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded-lg font-semibold hover:bg-blue-700 transition">Submit</button>
-                </form>
+                <Form
+                    formData={formData}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                />
             </div>
 
             {/* Right Side - Resume */}
@@ -97,15 +44,15 @@ const Resume = () => {
                 <div className="main w-full bg-white text-black flex flex-col rounded-sm p-8">
                     {/* Top Header Section */}
                     <div className="top-header w-full text-center py-2 mb-4">
-                        <h1 className="text-4xl font-bold">{resumeData.name || 'Your Name'}</h1>
-                        <h4 className="text-md font-semibold leading-tight">{resumeData.jobTitle || 'Software Engineer'}</h4>
+                        <h1 className="text-4xl font-bold">{formData.name || 'Your Name'}</h1>
+                        <h4 className="text-md font-semibold leading-tight">{formData.jobTitle || 'Software Engineer'}</h4>
                         <div className="links flex justify-center items-center gap-3 mt-2">
-                            <a href={resumeData.github || 'https://github.com/imcybermohsin'} target="_blank" rel="noopener noreferrer" className="font-medium text-sm flex items-center gap-1">
+                            <a href={formData.github || 'https://github.com/imcybermohsin'} target="_blank" rel="noopener noreferrer" className="font-medium text-sm flex items-center gap-1">
                                 <RiGithubFill className="text-xl" />
                                 GitHub Profile
                             </a>
                             <span>|</span>
-                            <a href={resumeData.linkedin} target="_blank" rel="noopener noreferrer" className="font-medium text-sm flex items-center gap-1">
+                            <a href={formData.linkedin} target="_blank" rel="noopener noreferrer" className="font-medium text-sm flex items-center gap-1">
                                 <RiLinkedinBoxFill className="text-xl" />
                                 LinkedIn Profile
                             </a>
@@ -113,17 +60,17 @@ const Resume = () => {
                         <div className="contacts flex justify-center items-center gap-3 mt-2">
                             <span className="font-semibold text-sm flex items-center gap-1">
                                 <RiMailLine className="text-lg" />
-                                {resumeData.email || 'your@gmail.com'}
+                                {formData.email || 'your@gmail.com'}
                             </span>
                             <span>|</span>
                             <span className="font-semibold text-sm flex items-center gap-1">
                                 <RiPhoneLine className="text-lg" />
-                                {resumeData.phone || '91xxxxxxxxxx'}
+                                {formData.phone || '91xxxxxxxxxx'}
                             </span>
                             <span>|</span>
                             <span className="font-semibold text-sm flex items-center gap-1">
                                 <RiMapPinLine className="text-lg" />
-                                {resumeData.location || 'City, State'}
+                                {formData.location || 'City, State'}
                             </span>
                         </div>
                         <hr className="border-b-[1px] border-b-black my-2" />
