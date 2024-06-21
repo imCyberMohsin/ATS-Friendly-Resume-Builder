@@ -1,6 +1,6 @@
 import './App.css'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import Resume from './components/Resume/Resume'
+import Resume from './components/ResumeAndForm/ResumeAndForm'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'

@@ -1,45 +1,9 @@
-//? Input & Resume 
-import React, { useState } from 'react';
+import React from 'react'
 import { RiGithubFill, RiLinkedinBoxFill, RiMailLine, RiPhoneLine, RiMapPinLine } from 'react-icons/ri';
-import Form from './Form'
 
-const Resume = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        jobTitle: '',
-        email: '',
-        phone: '',
-        location: '',
-        github: '',
-        linkedin: '',
-    });
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
-
+const Resume = ({ formData }) => {
     return (
-        <div className="flex flex-row min-h-screen bg-zinc-900 text-zinc-200">
-            {/* Left Side - Form */}
-            <div className="w-full md:w-2/5 bg-zinc-800 p-8">
-                {/* <h2 className="text-2xl font-bold mb-6">Create Your Resume</h2> */}
-                <h3 className="text-2xl font-bold mb-6 underline underline-offset-4">Header Section</h3>
-                <Form
-                    formData={formData}
-                    handleChange={handleChange}
-                    handleSubmit={handleSubmit}
-                />
-            </div>
-
-            {/* Right Side - Resume */}
+        <>
             <div className="w-full md:w-2/3 flex flex-col items-center justify-center bg-zinc-700 p-8">
                 <div className="main w-full bg-white text-black flex flex-col rounded-sm p-8">
                     {/* Top Header Section */}
@@ -177,8 +141,8 @@ const Resume = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    );
-};
+        </>
+    )
+}
 
-export default Resume;
+export default Resume
