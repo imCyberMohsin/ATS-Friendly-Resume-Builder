@@ -5,6 +5,7 @@ import Resume from './Resume/Resume'
 
 const ResumeAndForm = () => {
     const [formData, setFormData] = useState({
+        // Personal Details
         name: '',
         jobTitle: '',
         email: '',
@@ -12,6 +13,13 @@ const ResumeAndForm = () => {
         location: '',
         github: '',
         linkedin: '',
+
+        // Education
+        collegeName: '',
+        courseName: '',
+        courseDuration: '',
+        cgpa: '',
+        collegeLocation: ''
     });
 
     const handleChange = (e) => {

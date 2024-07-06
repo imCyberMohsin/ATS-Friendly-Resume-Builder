@@ -31,22 +31,58 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
             />
         }
         else if (page === 1) {
-            return <Education />
+            return <Education
+                formData={formData}
+                formTitle={formTitle}
+                page={page}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
         }
         else if (page === 2) {
-            return <Skills />
+            return <Skills
+                formData={formData}
+                formTitle={formTitle}
+                page={page}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
         }
         else if (page === 3) {
-            return <Experience />
+            return <Experience
+                formData={formData}
+                formTitle={formTitle}
+                page={page}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
         }
         else if (page === 4) {
-            return <Achivements />
+            return <Achivements
+                formData={formData}
+                formTitle={formTitle}
+                page={page}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
         }
         else if (page === 5) {
-            return <Projects />
+            return <Projects
+                formData={formData}
+                formTitle={formTitle}
+                page={page}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
         }
         else {
-            return <Hobbies />
+            return <Hobbies
+                formData={formData}
+                formTitle={formTitle}
+                page={page}
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+            />
         }
     }
 
