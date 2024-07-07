@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Education from './Education'
-import Achivements from './Achivements';
+import Achievements from './Achievements';
 import Experience from './Experience'
 import Hobbies from './Hobbies'
 import Skills from './Skills'
@@ -15,8 +15,8 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
         "Education",
         "Skills",
         "Experience",
-        "Achievements",
         "Projects",
+        "Achievements",
         "Hobbies"
     ]
 
@@ -58,7 +58,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
             />
         }
         else if (page === 4) {
-            return <Achivements
+            return <Projects
                 formData={formData}
                 formTitle={formTitle}
                 page={page}
@@ -67,7 +67,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
             />
         }
         else if (page === 5) {
-            return <Projects
+            return <Achievements
                 formData={formData}
                 formTitle={formTitle}
                 page={page}
@@ -89,10 +89,19 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
     return (
         <>
             <div className="w-full md:w-2/5 bg-zinc-800 p-8">
-                {/* <h2 className="text-2xl font-bold mb-6">Create Your Resume</h2> */}
-                <h3 className="text-2xl font-bold mb-6 underline underline-offset-4">{formTitle[page]}</h3>
-                {pageDisplay()}
+                {/* Progress Bar */}
+                <div className="progressBar bg-gray-200 h-2 rounded-md my-2">
+                    <div
+                        style={{
+                            width: page === 0 ? "0%" : page === 1 ? "20%" : page === 2 ? "40%" : page === 3 ? "60%" : page === 4 ? "80%" : page === 5 ? "90%" : "100%",
+                            transition: "width 0.5s ease"
+                        }}
+                        className="bg-blue-500 h-2 rounded-md"
+                    >
+                    </div>
+                </div>
 
+                {/* Buttons */}
                 <div className='flex my-5 gap-5'>
                     <button
                         disabled={page === 0}
@@ -111,6 +120,10 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
                         Next
                     </button>
                 </div>
+
+                {/* <h2 className="text-2xl font-bold mb-6">Create Your Resume</h2> */}
+                <h3 className="text-2xl font-bold mb-6 underline underline-offset-4">{formTitle[page]}</h3>
+                {pageDisplay()}
             </div>
         </>
     )

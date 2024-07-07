@@ -7,10 +7,10 @@ const Resume = ({ formData }) => {
             <div className="w-full md:w-2/3 flex flex-col items-center justify-center bg-zinc-700 p-8">
                 <div className="main w-full bg-white text-black flex flex-col rounded-sm p-8">
                     {/* Top Header Section */}
-                    <div className="top-header w-full text-center py-2 mb-4">
+                    <div className="top-header w-full text-center py-2">
                         <h1 className="text-4xl font-bold">{formData.name || 'Your Name'}</h1>
                         <h4 className="text-md font-semibold leading-tight">{formData.jobTitle || 'Software Engineer'}</h4>
-                        <div className="links flex justify-center items-center gap-3 mt-2">
+                        <div className="links flex justify-center items-center gap-3 mt-1">
                             <a href={formData.github || 'https://github.com/imcybermohsin'} target="_blank" rel="noopener noreferrer" className="font-medium text-sm flex items-center gap-1">
                                 <RiGithubFill className="text-xl" />
                                 GitHub Profile
@@ -21,7 +21,7 @@ const Resume = ({ formData }) => {
                                 LinkedIn Profile
                             </a>
                         </div>
-                        <div className="contacts flex justify-center items-center gap-3 mt-2">
+                        <div className="contacts flex justify-center items-center gap-3">
                             <span className="font-semibold text-sm flex items-center gap-1">
                                 <RiMailLine className="text-lg" />
                                 {formData.email || 'your@gmail.com'}
@@ -37,7 +37,7 @@ const Resume = ({ formData }) => {
                                 {formData.location || 'City, State'}
                             </span>
                         </div>
-                        <hr className="border-b-[1px] border-b-black my-2" />
+                        <hr className="border-b-[1px] border-b-black mt-1" />
                     </div>
 
                     {/* All Sections */}
@@ -50,7 +50,7 @@ const Resume = ({ formData }) => {
                                     <p>• LANGUAGES</p>
                                     <p>• LIBRARIES/FRAMEWORKS</p>
                                     <p>• DATABASES</p>
-                                    <p>• TOOLS/PLATFORMS</p>
+                                    <p>• DEV TOOLS</p>
                                 </div>
                                 <div>
                                     <p className="justify-start">JavaScript, Python, C++</p>
@@ -78,7 +78,7 @@ const Resume = ({ formData }) => {
                         </div>
 
                         {/* Experience section */}
-                        <div className="experience py-2">
+                        <div className="experience py-2 border-b border-gray-600">
                             <h1 className="text-xl font-semibold">EXPERIENCE</h1>
                             <div className="py-1">
                                 <div className="flex justify-between">
@@ -110,14 +110,14 @@ const Resume = ({ formData }) => {
                         </div>
 
                         {/* Certifications section */}
-                        <div className="certifications py-2 border-b border-gray-600">
+                        {/* <div className="certifications py-2 border-b border-gray-600">
                             <h1 className="text-xl font-semibold">CERTIFICATIONS</h1>
                             <div className="pl-2 pt-1">
                                 <p className="font-sm">• Certification x<a href="#" className="text-xs font-semibold"> - BY ORGANIZATION</a></p>
                                 <p className="font-sm">• Certification y<a href="#" className="text-xs font-semibold"> - BY ORGANIZATION</a></p>
                                 <p className="font-sm">• Certification z<a href="#" className="text-xs font-semibold"> - BY ORGANIZATION</a></p>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Achievements section */}
                         <div className="achievements py-2 pb-3 border-b border-gray-600">

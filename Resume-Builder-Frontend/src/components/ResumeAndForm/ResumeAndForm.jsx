@@ -19,7 +19,50 @@ const ResumeAndForm = () => {
         courseName: '',
         courseDuration: '',
         cgpa: '',
-        collegeLocation: ''
+        collegeLocation: '',
+
+        // Experience
+        exp1_companyName: '',
+        exp1_jobPosition: '',
+        exp1_jobDesc: '',
+        exp1_jobDuration: '',
+        exp2_companyName: '',
+        exp2_jobPosition: '',
+        exp2_jobDesc: '',
+        exp2_jobDuration: '',
+
+        // Projects
+        p1_projectName: '',
+        p1_projectLiveLink: '',
+        p1_projectRepoLink: '',
+        p1_techStacksUsed: '',
+        p1_projectDesc: '',
+        p2_projectName: '',
+        p2_projectLiveLink: '',
+        p2_projectRepoLink: '',
+        p2_techStacksUsed: '',
+        p2_projectDesc: '',
+        p3_projectName: '',
+        p3_projectLiveLink: '',
+        p3_projectRepoLink: '',
+        p3_techStacksUsed: '',
+        p3_projectDesc: '',
+
+        // Skills
+        languages: '',
+        librariesAndFrameworks: '',
+        databases: '',
+        devTools: '',
+
+        // Achievements
+        achievement_1: '',
+        achievement_2: '',
+        achievement_3: '',
+
+        // Hobbies
+        hobby_1: '',
+        hobby_2: '',
+        hobby_3: '',
     });
 
     const handleChange = (e) => {
