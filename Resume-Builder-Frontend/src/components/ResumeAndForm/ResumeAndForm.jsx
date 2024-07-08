@@ -30,6 +30,10 @@ const ResumeAndForm = () => {
         exp2_jobPosition: '',
         exp2_jobDesc: '',
         exp2_jobDuration: '',
+        exp3_companyName: '',
+        exp3_jobPosition: '',
+        exp3_jobDesc: '',
+        exp3_jobDuration: '',
 
         // Projects
         p1_projectName: '',

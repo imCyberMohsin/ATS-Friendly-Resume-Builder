@@ -12,8 +12,8 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
     const [page, setPage] = useState(0)
     const formTitle = [
         "Personal Details",
-        "Education",
         "Skills",
+        "Education",
         "Experience",
         "Projects",
         "Achievements",
@@ -31,7 +31,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
             />
         }
         else if (page === 1) {
-            return <Education
+            return <Skills
                 formData={formData}
                 formTitle={formTitle}
                 page={page}
@@ -40,7 +40,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
             />
         }
         else if (page === 2) {
-            return <Skills
+            return <Education
                 formData={formData}
                 formTitle={formTitle}
                 page={page}
