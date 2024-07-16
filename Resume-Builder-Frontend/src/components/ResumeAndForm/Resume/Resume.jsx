@@ -1,11 +1,47 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { RiGithubFill, RiLinkedinBoxFill, RiMailLine, RiPhoneLine, RiMapPinLine } from 'react-icons/ri';
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
 
 const Resume = ({ formData }) => {
+    const pdfRef = useRef();
+
+    const downloadPDF = () => {
+        const input = pdfRef.current;
+
+        // Adjust scale and quality
+        html2canvas(input, { scale: 3, allowTaint: true, useCORS: true }).then((canvas) => {
+            const imgData = canvas.toDataURL('image/png');
+
+            // Calculate PDF page dimensions
+            const pdf = new jsPDF('p', 'mm', 'a4', true);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = pdf.internal.pageSize.getHeight();
+
+            // Calculate image dimensions and position
+            const imgWidth = canvas.width;
+            const imgHeight = canvas.height;
+            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+            const imgX = (pdfWidth - imgWidth * ratio) / 2;
+            const imgY = 0; // Adjust as needed for margins
+
+            // Add image to PDF
+            pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+
+            // Save or download the PDF
+            pdf.save('resume.pdf');
+        });
+    };
+
     return (
         <>
             <div className="w-full md:w-2/3 flex flex-col items-center justify-center bg-zinc-700 p-8">
-                <div className="main w-full bg-white text-black flex flex-col rounded-sm p-8">
+                <div className="flex justify-center my-4">
+                    <button onClick={downloadPDF} className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Download PDF
+                    </button>
+                </div>
+                <div ref={pdfRef} className="main w-full bg-white text-black flex flex-col rounded-sm p-8">
                     {/* Personal Details */}
                     <div className="top-header w-full text-center py-2">
                         <h1 className="text-4xl font-bold">{formData.name || 'Mohsin Ansari'}</h1>
