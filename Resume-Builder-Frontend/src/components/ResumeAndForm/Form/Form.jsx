@@ -86,6 +86,11 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
         }
     }
 
+    const handleDownload = () => {
+        // Add logic to handle the resume download
+        console.log("Downloading resume...");
+    };
+
     return (
         <>
             <div className="w-full md:w-2/5 bg-zinc-800 p-8">
@@ -124,6 +129,18 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
                 {/* <h2 className="text-2xl font-bold mb-6">Create Your Resume</h2> */}
                 <h3 className="text-2xl font-bold mb-6 underline underline-offset-4">{formTitle[page]}</h3>
                 {pageDisplay()}
+
+                {/* Download Button */}
+                {page === formTitle.length - 1 && (
+                    <button
+                        // disabled={page > 5}
+                        type="submit"
+                        onClick={() => handleDownload()}
+                        className={`w-full text-white p-2 my-5 rounded-lg font-semibold transition bg-blue-600 hover:bg-blue-700`}
+                    >
+                        Download
+                    </button>
+                )}
             </div>
         </>
     )
