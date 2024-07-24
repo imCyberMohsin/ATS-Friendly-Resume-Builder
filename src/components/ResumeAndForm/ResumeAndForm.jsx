@@ -82,7 +82,7 @@ const ResumeAndForm = () => {
     }
 
     return (
-        <div className="flex flex-row min-h-screen bg-zinc-900 text-zinc-200">
+        <div className="flex flex-col sm:flex-row  min-h-screen w-full bg-zinc-900 text-zinc-200">
             {/* Left Side - Form */}
             <Form
                 formData={formData}

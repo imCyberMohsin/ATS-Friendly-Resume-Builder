@@ -41,7 +41,7 @@ const Resume = ({ formData }) => {
                         Download PDF
                     </button>
                 </div>
-                <div ref={pdfRef} className="main w-full bg-white text-black flex flex-col rounded-sm p-8">
+                <div ref={pdfRef} className="main w-screen sm:w-full bg-white text-black flex flex-col rounded-sm p-8">
                     {/* Personal Details */}
                     <div className="top-header w-full text-center py-2">
                         <h1 className="text-4xl font-bold">{formData.name || 'Mohsin Ansari'}</h1>
