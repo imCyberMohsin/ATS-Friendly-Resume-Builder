@@ -86,10 +86,9 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
         }
     }
 
-    const handleDownload = () => {
-        // Add logic to handle the resume download
-        console.log("Downloading resume...");
-    };
+    // const handleDownload = () => {
+    //     console.log("Downloading resume...");
+    // };
 
     return (
         <>
@@ -131,7 +130,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
                 {pageDisplay()}
 
                 {/* Download Button */}
-                {page === formTitle.length - 1 && (
+                {/* {page === formTitle.length - 1 && (
                     <button
                         // disabled={page > 5}
                         type="submit"
@@ -140,7 +139,7 @@ const Form = ({ formData, handleChange, handleSubmit }) => {
                     >
                         Download
                     </button>
-                )}
+                )} */}
             </div>
         </>
     )

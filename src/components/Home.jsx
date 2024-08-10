@@ -9,7 +9,7 @@ const Home = () => {
                     <div className="bg-zinc-800 bg-opacity-70 p-10 rounded-lg">
                         <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Build Your Professional Resume</h1>
                         <p className="text-lg sm:text-xl mb-8 max-w-xl mx-auto">Create a professional resume in minutes with our easy-to-use resume builder. Stand out to employers and land your dream job!</p>
-                        <a href="#" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Get Started</a>
+                        <a href="/myResume" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">Get Started</a>
                     </div>
                 </div>
             </section>
